@@ -3,17 +3,57 @@ package devinflix.usuarios;
 import java.util.Objects;
 
 public class Usuario {
-    public String nomeCompleto;
-    public String cpf;
-    public String nick;
-    public String dataNasc;
-    public String endereco;
+    private String nomeCompleto;
+    private String cpf;
+    private String nick;
+    private String dataNasc;
+    private String endereco;
 
     public Usuario(String nomeCompleto, String cpf, String nick, String dataNasc, String endereco) {
         this.nomeCompleto = nomeCompleto;
         this.cpf = cpf;
         this.nick = nick;
         this.dataNasc = dataNasc;
+        this.endereco = endereco;
+    }
+
+    public String getNomeCompleto() {
+        return this.nomeCompleto;
+    }
+
+    public void setNomeCompleto(String nomeCompleto) {
+        this.nomeCompleto = nomeCompleto;
+    }
+
+    public String getCpf() {
+        return this.cpf;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
+
+    public String getNick() {
+        return this.nick;
+    }
+
+    public void setNick(String nick) {
+        this.nick = nick;
+    }
+
+    public String getDataNasc() {
+        return this.dataNasc;
+    }
+
+    public void setDataNasc(String dataNasc) {
+        this.dataNasc = dataNasc;
+    }
+
+    public String getEndereco() {
+        return this.endereco;
+    }
+
+    public void setEndereco(String endereco) {
         this.endereco = endereco;
     }
 

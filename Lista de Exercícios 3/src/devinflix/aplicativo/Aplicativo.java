@@ -161,18 +161,18 @@ public class Aplicativo {
 
         while (iniciar) {
 
-            System.out.println("\n\nOlá " + usuario.get(0).nick + ", de uma olhada na nossa menu abaixo ;)");
+            System.out.println("\n\nOlá " + usuario.get(0).getNick() + ", de uma olhada na nossa menu abaixo ;)");
 
             menu:
             if(escolha) {
                 // Lista todos os filmes da base
                 System.out.println(
-                        "1 - " + listaFilmes.get(0).nome +
-                                ", 2 - " + listaFilmes.get(1).nome +
-                                ", 3 - " + listaFilmes.get(2).nome +
-                                ", 4 - " + listaFilmes.get(3).nome +
-                                ", 5 - " + listaFilmes.get(4).nome +
-                                ", 6 - " + listaFilmes.get(5).nome +
+                        "1 - " + listaFilmes.get(0).getNome() +
+                                ", 2 - " + listaFilmes.get(1).getNome() +
+                                ", 3 - " + listaFilmes.get(2).getNome() +
+                                ", 4 - " + listaFilmes.get(3).getNome() +
+                                ", 5 - " + listaFilmes.get(4).getNome() +
+                                ", 6 - " + listaFilmes.get(5).getNome() +
                                 "\n7 - Sugestões de Filmes, " +
                                 "8 - Área Administrativa"
                 );
@@ -190,7 +190,7 @@ public class Aplicativo {
                 filme1:
                 if (escolhaFilme == 1 && pago) {
                         System.out.println("Você escolheu o filme " +
-                                listaFilmes.get(0).nome + ", o que você deseja fazer?");
+                                listaFilmes.get(0).getNome() + ", o que você deseja fazer?");
 
                         // Mostrar opções
                         System.out.print("\n1 - Assistir, 2 - Descrição, 3 - Avaliar, 4 - Recomendar, " +
@@ -199,14 +199,14 @@ public class Aplicativo {
 
                         voltar1:
                         if (navegacao == 1) {
-                            System.out.println("Conectando..." + listaFilmes.get(0).link);
+                            System.out.println("Conectando..." + listaFilmes.get(0).getLink());
                             System.out.println("Conexão concluída");
                             System.out.println("Assistindo o filme");
 
                             // Incrementa a visualização do filme
                             generoAventura++;
 
-                            System.out.println("\nVocê terminou de assistir o filme " + listaFilmes.get(0).nome +
+                            System.out.println("\nVocê terminou de assistir o filme " + listaFilmes.get(0).getNome() +
                                     ", o que você deseja fazer agora?");
 
                             System.out.print("\n1 - Menu Principal, 2 - Avaliar, 3 - Sair: ");
@@ -219,7 +219,7 @@ public class Aplicativo {
                                 // Avaliar o filme
                             } else if (descicaoFilme1 == 2) {
                                 System.out.println("\nEscolha abaixo uma das opções para avaliar o filme "
-                                        + listaFilmes.get(0).nome);
+                                        + listaFilmes.get(0).getNome());
                                 System.out.println("\nEsse filme possui uma quantidade de likes de: " + likeFilme1);
                                 System.out.print("Escolha 1 para dar like no filme ou 2 para dar deslike no filme: ");
                                 int avaliacao1 = entrada.nextInt();
@@ -237,7 +237,7 @@ public class Aplicativo {
                             }
 
                         } else if (navegacao == 2) {
-                            System.out.println("\nSinopse do Filme: " + listaFilmes.get(0).sinopse);
+                            System.out.println("\nSinopse do Filme: " + listaFilmes.get(0).getSinopse());
                             System.out.print("\nDigite o número 1, para voltar ao menu principal: ");
                             int navegacao2 = entrada.nextInt();
 
@@ -249,7 +249,7 @@ public class Aplicativo {
                         } else if (navegacao == 3) {
 
                             System.out.println("\nEscolha abaixo uma das opções para avaliar o filme "
-                                    + listaFilmes.get(0).nome);
+                                    + listaFilmes.get(0).getNome());
                             System.out.println("\nEsse filme possui uma quantidade de likes de: " + likeFilme1);
                             System.out.print("\nEscolha 1 para dar like no filme ou 2 para dar deslike no filme: ");
                             int avaliacao1 = entrada.nextInt();
@@ -274,8 +274,8 @@ public class Aplicativo {
                             recomendacao.add(new Recomendacao(recoUser, recoTexto));
 
                             for (Recomendacao verReco: recomendacao) {
-                                System.out.print("\nRecomendação enviada para o usuário: " + verReco.nomeUsuario);
-                                System.out.print("\nComentário enviando: " + verReco.comentario);
+                                System.out.print("\nRecomendação enviada para o usuário: " + verReco.getNomeUsuario());
+                                System.out.print("\nComentário enviando: " + verReco.getComentario());
                             }
 
                         } else if (navegacao == 5) {
@@ -286,7 +286,7 @@ public class Aplicativo {
                 filme2:
                 if (escolhaFilme == 2 && pago) {
                     System.out.println("Você escolheu o filme " +
-                            listaFilmes.get(1).nome + ", o que você deseja fazer?");
+                            listaFilmes.get(1).getNome() + ", o que você deseja fazer?");
 
                     // Mostrar opções
                     System.out.print("\n1 - Assistir, 2 - Descrição, 3 - Avaliar, 4 - Recomendar, " +
@@ -295,14 +295,14 @@ public class Aplicativo {
 
                     voltar2:
                     if (navegacao == 1) {
-                        System.out.println("Conectando..." + listaFilmes.get(1).link);
+                        System.out.println("Conectando..." + listaFilmes.get(1).getLink());
                         System.out.println("Conexão concluída");
                         System.out.println("Assistindo o filme");
 
                         // Incrementa a visualização do filme
                         generoCientifico++;
 
-                        System.out.println("\nVocê terminou de assistir o filme " + listaFilmes.get(1).nome +
+                        System.out.println("\nVocê terminou de assistir o filme " + listaFilmes.get(1).getNome() +
                                 ", o que você deseja fazer agora?");
 
                         System.out.print("\n1 - Menu Principal, 2 - Avaliar, 3 - Sair: ");
@@ -315,7 +315,7 @@ public class Aplicativo {
                             // Avaliar o filme
                         } else if (descicaoFilme1 == 2) {
                             System.out.println("\nEscolha abaixo uma das opções para avaliar o filme "
-                                    + listaFilmes.get(1).nome);
+                                    + listaFilmes.get(1).getNome());
                             System.out.println("\nEsse filme possui uma quantidade de likes de: " + likeFilme1);
                             System.out.print("Escolha 1 para dar like no filme ou 2 para dar deslike no filme: ");
                             int avaliacao1 = entrada.nextInt();
@@ -333,7 +333,7 @@ public class Aplicativo {
                         }
 
                     } else if (navegacao == 2) {
-                        System.out.println("\nSinopse do Filme: " + listaFilmes.get(1).sinopse);
+                        System.out.println("\nSinopse do Filme: " + listaFilmes.get(1).getSinopse());
                         System.out.print("\nDigite o número 1, para voltar ao menu principal: ");
                         int navegacao2 = entrada.nextInt();
 
@@ -345,7 +345,7 @@ public class Aplicativo {
                     } else if (navegacao == 3) {
 
                         System.out.println("\nEscolha abaixo uma das opções para avaliar o filme "
-                                + listaFilmes.get(1).nome);
+                                + listaFilmes.get(1).getNome());
                         System.out.println("\nEsse filme possui uma quantidade de likes de: " + likeFilme1);
                         System.out.print("\nEscolha 1 para dar like no filme ou 2 para dar deslike no filme: ");
                         int avaliacao1 = entrada.nextInt();
@@ -370,8 +370,8 @@ public class Aplicativo {
                         recomendacao.add(new Recomendacao(recoUser, recoTexto));
 
                         for (Recomendacao verReco: recomendacao) {
-                            System.out.print("\nRecomendação enviada para o usuário: " + verReco.nomeUsuario);
-                            System.out.print("\nComentário enviando: " + verReco.comentario);
+                            System.out.print("\nRecomendação enviada para o usuário: " + verReco.getNomeUsuario());
+                            System.out.print("\nComentário enviando: " + verReco.getComentario());
                         }
 
                     } else if (navegacao == 5) {
@@ -382,7 +382,7 @@ public class Aplicativo {
                 filme3:
                 if (escolhaFilme == 3 && pago) {
                     System.out.println("Você escolheu o filme " +
-                            listaFilmes.get(2).nome + ", o que você deseja fazer?");
+                            listaFilmes.get(2).getNome() + ", o que você deseja fazer?");
 
                     // Mostrar opções
                     System.out.print("\n1 - Assistir, 2 - Descrição, 3 - Avaliar, 4 - Recomendar, " +
@@ -391,14 +391,14 @@ public class Aplicativo {
 
                     voltar3:
                     if (navegacao == 1) {
-                        System.out.println("Conectando..." + listaFilmes.get(2).link);
+                        System.out.println("Conectando..." + listaFilmes.get(2).getLink());
                         System.out.println("Conexão concluída");
                         System.out.println("Assistindo o filme");
 
                         // Incrementa a visualização do filme
                         generoAcao++;
 
-                        System.out.println("\nVocê terminou de assistir o filme " + listaFilmes.get(2).nome +
+                        System.out.println("\nVocê terminou de assistir o filme " + listaFilmes.get(2).getNome() +
                                 ", o que você deseja fazer agora?");
 
                         System.out.print("\n1 - Menu Principal, 2 - Avaliar, 3 - Sair: ");
@@ -411,7 +411,7 @@ public class Aplicativo {
                             // Avaliar o filme
                         } else if (descicaoFilme1 == 2) {
                             System.out.println("\nEscolha abaixo uma das opções para avaliar o filme "
-                                    + listaFilmes.get(2).nome);
+                                    + listaFilmes.get(2).getNome());
                             System.out.println("\nEsse filme possui uma quantidade de likes de: " + likeFilme1);
                             System.out.print("Escolha 1 para dar like no filme ou 2 para dar deslike no filme: ");
                             int avaliacao1 = entrada.nextInt();
@@ -429,7 +429,7 @@ public class Aplicativo {
                         }
 
                     } else if (navegacao == 2) {
-                        System.out.println("\nSinopse do Filme: " + listaFilmes.get(2).sinopse);
+                        System.out.println("\nSinopse do Filme: " + listaFilmes.get(2).getSinopse());
                         System.out.print("\nDigite o número 1, para voltar ao menu principal: ");
                         int navegacao2 = entrada.nextInt();
 
@@ -441,7 +441,7 @@ public class Aplicativo {
                     } else if (navegacao == 3) {
 
                         System.out.println("\nEscolha abaixo uma das opções para avaliar o filme "
-                                + listaFilmes.get(2).nome);
+                                + listaFilmes.get(2).getNome());
                         System.out.println("\nEsse filme possui uma quantidade de likes de: " + likeFilme1);
                         System.out.print("\nEscolha 1 para dar like no filme ou 2 para dar deslike no filme: ");
                         int avaliacao1 = entrada.nextInt();
@@ -466,8 +466,8 @@ public class Aplicativo {
                         recomendacao.add(new Recomendacao(recoUser, recoTexto));
 
                         for (Recomendacao verReco: recomendacao) {
-                            System.out.print("\nRecomendação enviada para o usuário: " + verReco.nomeUsuario);
-                            System.out.print("\nComentário enviando: " + verReco.comentario);
+                            System.out.print("\nRecomendação enviada para o usuário: " + verReco.getNomeUsuario());
+                            System.out.print("\nComentário enviando: " + verReco.getComentario());
                         }
 
                     } else if (navegacao == 5) {
@@ -478,7 +478,7 @@ public class Aplicativo {
                 filme4:
                 if (escolhaFilme == 4 && pago) {
                     System.out.println("Você escolheu o filme " +
-                            listaFilmes.get(3).nome + ", o que você deseja fazer?");
+                            listaFilmes.get(3).getNome() + ", o que você deseja fazer?");
 
                     // Mostrar opções
                     System.out.print("\n1 - Assistir, 2 - Descrição, 3 - Avaliar, 4 - Recomendar, " +
@@ -487,14 +487,14 @@ public class Aplicativo {
 
                     voltar4:
                     if (navegacao == 1) {
-                        System.out.println("Conectando..." + listaFilmes.get(3).link);
+                        System.out.println("Conectando..." + listaFilmes.get(3).getLink());
                         System.out.println("Conexão concluída");
                         System.out.println("Assistindo o filme");
 
                         // Incrementa a visualização do filme
                         generoAcao++;
 
-                        System.out.println("\nVocê terminou de assistir o filme " + listaFilmes.get(3).nome +
+                        System.out.println("\nVocê terminou de assistir o filme " + listaFilmes.get(3).getNome() +
                                 ", o que você deseja fazer agora?");
 
                         System.out.print("\n1 - Menu Principal, 2 - Avaliar, 3 - Sair: ");
@@ -507,7 +507,7 @@ public class Aplicativo {
                             // Avaliar o filme
                         } else if (descicaoFilme1 == 2) {
                             System.out.println("\nEscolha abaixo uma das opções para avaliar o filme "
-                                    + listaFilmes.get(3).nome);
+                                    + listaFilmes.get(3).getNome());
                             System.out.println("\nEsse filme possui uma quantidade de likes de: " + likeFilme1);
                             System.out.print("Escolha 1 para dar like no filme ou 2 para dar deslike no filme: ");
                             int avaliacao1 = entrada.nextInt();
@@ -525,7 +525,7 @@ public class Aplicativo {
                         }
 
                     } else if (navegacao == 2) {
-                        System.out.println("\nSinopse do Filme: " + listaFilmes.get(3).sinopse);
+                        System.out.println("\nSinopse do Filme: " + listaFilmes.get(3).getSinopse());
                         System.out.print("\nDigite o número 1, para voltar ao menu principal: ");
                         int navegacao2 = entrada.nextInt();
 
@@ -537,7 +537,7 @@ public class Aplicativo {
                     } else if (navegacao == 3) {
 
                         System.out.println("\nEscolha abaixo uma das opções para avaliar o filme "
-                                + listaFilmes.get(3).nome);
+                                + listaFilmes.get(3).getNome());
                         System.out.println("\nEsse filme possui uma quantidade de likes de: " + likeFilme1);
                         System.out.print("\nEscolha 1 para dar like no filme ou 2 para dar deslike no filme: ");
                         int avaliacao1 = entrada.nextInt();
@@ -562,8 +562,8 @@ public class Aplicativo {
                         recomendacao.add(new Recomendacao(recoUser, recoTexto));
 
                         for (Recomendacao verReco: recomendacao) {
-                            System.out.print("\nRecomendação enviada para o usuário: " + verReco.nomeUsuario);
-                            System.out.print("\nComentário enviando: " + verReco.comentario);
+                            System.out.print("\nRecomendação enviada para o usuário: " + verReco.getNomeUsuario());
+                            System.out.print("\nComentário enviando: " + verReco.getComentario());
                         }
 
                     } else if (navegacao == 5) {
@@ -574,7 +574,7 @@ public class Aplicativo {
                 filme5:
                 if (escolhaFilme == 5 && pago) {
                     System.out.println("Você escolheu o filme " +
-                            listaFilmes.get(4).nome + ", o que você deseja fazer?");
+                            listaFilmes.get(4).getNome() + ", o que você deseja fazer?");
 
                     // Mostrar opções
                     System.out.print("\n1 - Assistir, 2 - Descrição, 3 - Avaliar, 4 - Recomendar, " +
@@ -583,14 +583,14 @@ public class Aplicativo {
 
                     voltar5:
                     if (navegacao == 1) {
-                        System.out.println("Conectando..." + listaFilmes.get(4).link);
+                        System.out.println("Conectando..." + listaFilmes.get(4).getLink());
                         System.out.println("Conexão concluída");
                         System.out.println("Assistindo o filme");
 
                         // Incrementa a visualização do filme
                         generoAventura++;
 
-                        System.out.println("\nVocê terminou de assistir o filme " + listaFilmes.get(4).nome +
+                        System.out.println("\nVocê terminou de assistir o filme " + listaFilmes.get(4).getNome() +
                                 ", o que você deseja fazer agora?");
 
                         System.out.print("\n1 - Menu Principal, 2 - Avaliar, 3 - Sair: ");
@@ -603,7 +603,7 @@ public class Aplicativo {
                             // Avaliar o filme
                         } else if (descicaoFilme1 == 2) {
                             System.out.println("\nEscolha abaixo uma das opções para avaliar o filme "
-                                    + listaFilmes.get(4).nome);
+                                    + listaFilmes.get(4).getNome());
                             System.out.println("\nEsse filme possui uma quantidade de likes de: " + likeFilme1);
                             System.out.print("Escolha 1 para dar like no filme ou 2 para dar deslike no filme: ");
                             int avaliacao1 = entrada.nextInt();
@@ -621,7 +621,7 @@ public class Aplicativo {
                         }
 
                     } else if (navegacao == 2) {
-                        System.out.println("\nSinopse do Filme: " + listaFilmes.get(4).sinopse);
+                        System.out.println("\nSinopse do Filme: " + listaFilmes.get(4).getSinopse());
                         System.out.print("\nDigite o número 1, para voltar ao menu principal: ");
                         int navegacao2 = entrada.nextInt();
 
@@ -633,7 +633,7 @@ public class Aplicativo {
                     } else if (navegacao == 3) {
 
                         System.out.println("\nEscolha abaixo uma das opções para avaliar o filme "
-                                + listaFilmes.get(4).nome);
+                                + listaFilmes.get(4).getNome());
                         System.out.println("\nEsse filme possui uma quantidade de likes de: " + likeFilme1);
                         System.out.print("\nEscolha 1 para dar like no filme ou 2 para dar deslike no filme: ");
                         int avaliacao1 = entrada.nextInt();
@@ -658,8 +658,8 @@ public class Aplicativo {
                         recomendacao.add(new Recomendacao(recoUser, recoTexto));
 
                         for (Recomendacao verReco: recomendacao) {
-                            System.out.print("\nRecomendação enviada para o usuário: " + verReco.nomeUsuario);
-                            System.out.print("\nComentário enviando: " + verReco.comentario);
+                            System.out.print("\nRecomendação enviada para o usuário: " + verReco.getNomeUsuario());
+                            System.out.print("\nComentário enviando: " + verReco.getComentario());
                         }
 
                     } else if (navegacao == 5) {
@@ -670,7 +670,7 @@ public class Aplicativo {
                 filme6:
                 if (escolhaFilme == 6 && pago) {
                     System.out.println("Você escolheu o filme " +
-                            listaFilmes.get(5).nome + ", o que você deseja fazer?");
+                            listaFilmes.get(5).getNome() + ", o que você deseja fazer?");
 
                     // Mostrar opções
                     System.out.print("\n1 - Assistir, 2 - Descrição, 3 - Avaliar, 4 - Recomendar, " +
@@ -679,14 +679,14 @@ public class Aplicativo {
 
                     voltar6:
                     if (navegacao == 1) {
-                        System.out.println("Conectando..." + listaFilmes.get(5).link);
+                        System.out.println("Conectando..." + listaFilmes.get(5).getLink());
                         System.out.println("Conexão concluída");
                         System.out.println("Assistindo o filme");
 
                         // Incrementa a visualização do filme
                         generoAventura++;
 
-                        System.out.println("\nVocê terminou de assistir o filme " + listaFilmes.get(5).nome +
+                        System.out.println("\nVocê terminou de assistir o filme " + listaFilmes.get(5).getNome() +
                                 ", o que você deseja fazer agora?");
 
                         System.out.print("\n1 - Menu Principal, 2 - Avaliar, 3 - Sair: ");
@@ -699,7 +699,7 @@ public class Aplicativo {
                             // Avaliar o filme
                         } else if (descicaoFilme1 == 2) {
                             System.out.println("\nEscolha abaixo uma das opções para avaliar o filme "
-                                    + listaFilmes.get(5).nome);
+                                    + listaFilmes.get(5).getNome());
                             System.out.println("\nEsse filme possui uma quantidade de likes de: " + likeFilme1);
                             System.out.print("Escolha 1 para dar like no filme ou 2 para dar deslike no filme: ");
                             int avaliacao1 = entrada.nextInt();
@@ -717,7 +717,7 @@ public class Aplicativo {
                         }
 
                     } else if (navegacao == 2) {
-                        System.out.println("\nSinopse do Filme: " + listaFilmes.get(5).sinopse);
+                        System.out.println("\nSinopse do Filme: " + listaFilmes.get(5).getSinopse());
                         System.out.print("\nDigite o número 1, para voltar ao menu principal: ");
                         int navegacao2 = entrada.nextInt();
 
@@ -729,7 +729,7 @@ public class Aplicativo {
                     } else if (navegacao == 3) {
 
                         System.out.println("\nEscolha abaixo uma das opções para avaliar o filme "
-                                + listaFilmes.get(5).nome);
+                                + listaFilmes.get(5).getNome());
                         System.out.println("\nEsse filme possui uma quantidade de likes de: " + likeFilme1);
                         System.out.print("\nEscolha 1 para dar like no filme ou 2 para dar deslike no filme: ");
                         int avaliacao1 = entrada.nextInt();
@@ -754,8 +754,8 @@ public class Aplicativo {
                         recomendacao.add(new Recomendacao(recoUser, recoTexto));
 
                         for (Recomendacao verReco: recomendacao) {
-                            System.out.print("\nRecomendação enviada para o usuário: " + verReco.nomeUsuario);
-                            System.out.print("\nComentário enviando: " + verReco.comentario);
+                            System.out.print("\nRecomendação enviada para o usuário: " + verReco.getNomeUsuario());
+                            System.out.print("\nComentário enviando: " + verReco.getComentario());
                         }
 
                     } else if (navegacao == 5) {

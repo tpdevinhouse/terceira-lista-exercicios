@@ -3,15 +3,47 @@ package devinflix.filmes;
 import java.util.Objects;
 
 public class Filme {
-    public String nome;
-    public String sinopse;
-    public String genero;
-    public String link;
+    private  String nome;
+    private String sinopse;
+    private String genero;
+    private String link;
 
     public Filme(String nome, String sinopse, String genero, String link) {
         this.nome = nome;
         this.sinopse = sinopse;
         this.genero = genero;
+        this.link = link;
+    }
+
+    public String getNome() {
+        return this.nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getSinopse() {
+        return this.sinopse;
+    }
+
+    public void setSinopse(String sinopse) {
+        this.sinopse = sinopse;
+    }
+
+    public String getGenero() {
+        return this.genero;
+    }
+
+    public void setGenero(String genero) {
+        this.genero = genero;
+    }
+
+    public String getLink() {
+        return this.link;
+    }
+
+    public void setLink(String link) {
         this.link = link;
     }
 
